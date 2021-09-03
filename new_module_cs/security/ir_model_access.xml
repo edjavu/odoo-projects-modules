@@ -1,0 +1,33 @@
+<odoo>
+    <record id="model_access_alumno" model="ir.model.access">
+        <field name="name">model.access.alumno</field>
+        <field name="model_id" ref="new_module_cs.model_nm_alumno" />
+        <field name="group_id" ref="base.group_system" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_unlink" eval="1" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+
+    <record id="model_access_asignatura" model="ir.model.access">
+        <field name="name">model.access.asignatura</field>
+        <field name="model_id" ref="new_module_cs.model_nm_asignatura" />
+        <field name="group_id" ref="base.group_system" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_unlink" eval="1" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+    <record id="model_access_calificacion" model="ir.model.access">
+        <field name="name">model.access.calificacion</field>
+        <field name="model_id" ref="new_module_cs.model_nm_calificacion" />
+        <field name="group_id" ref="base.group_system" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_unlink" eval="1" />
+        <field name="perm_read" eval="1" />
+    </record>
+
+</odoo>

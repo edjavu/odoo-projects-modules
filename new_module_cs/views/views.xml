@@ -1,0 +1,125 @@
+<odoo>
+  <!-- Vistas -->
+  <record id="view_form_alumno" model="ir.ui.view" >
+    <field name="name">view.form.nm.alumno</field>
+    <field name="model" >nm.alumno</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="asignatura_id"/>
+            <field name="calificacion_id"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_tree_alumno" model="ir.ui.view" >
+    <field name="name">view.tree.nm.alumno</field>
+    <field name="model" >nm.alumno</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="asignatura_id"/>
+        <field name="calificacion_id"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_form_asignatura" model="ir.ui.view" >
+    <field name="name">view.form.nm.asignatura</field>
+    <field name="model" >nm.asignatura</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_tree_asignatura" model="ir.ui.view" >
+    <field name="name">view.tree.nm.asignatura</field>
+    <field name="model" >nm.asignatura</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+      </tree>
+    </field>
+  </record>
+
+
+  <record id="view_form_calificacion" model="ir.ui.view" >
+    <field name="name">view.form.nm.calificacion</field>
+    <field name="model" >nm.calificacion</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_tree_calificacion" model="ir.ui.view" >
+    <field name="name">view.tree.nm.calificacion</field>
+    <field name="model" >nm.calificacion</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+      </tree>
+    </field>
+  </record>
+
+
+
+
+  <!-- Acciones de ventana -->
+  <record id="action_view_alumno" model="ir.actions.act_window">
+    <field name="name">Alumnos</field>
+    <field name="res_model">nm.alumno</field>
+  </record>
+
+  <record id="action_view_asignatura" model="ir.actions.act_window">
+    <field name="name">Asignaturas</field>
+    <field name="res_model">nm.asignatura</field>
+  </record>
+
+  <record id="action_view_calificacion" model="ir.actions.act_window">
+    <field name="name">Calificaciones</field>
+    <field name="res_model">nm.calificacion</field>
+  </record>
+
+
+  <!-- Menus -->
+  <menuitem
+    id="menu_main_cursos"
+    name="Cursos (Nuevo)"
+    parent=""
+    action="new_module_cs.action_view_alumno" />
+
+  <menuitem
+    id="menu_alumnos"
+    name="Alumnos"
+    parent="new_module_cs.menu_main_cursos"
+    action="new_module_cs.action_view_alumno"/>
+
+  <menuitem
+    id="menu_asignaturas"
+    name="Asignaturas"
+    parent="new_module_cs.menu_main_cursos"
+    action="new_module_cs.action_view_asignatura"/>
+
+
+    <menuitem
+    id="menu_calificacion"
+    name="Calificaciones"
+    parent="new_module_cs.menu_main_cursos"
+    action="new_module_cs.action_view_calificacion"/>
+</odoo>

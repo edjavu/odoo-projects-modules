@@ -1,0 +1,98 @@
+<odoo>
+  <data>
+
+    <!--Vistas-->
+    <record id="view_form_student" model="ir.ui.view">
+      <field name="name" >view.form.student.profile</field>
+      <field name="model" >student.profile</field>
+      <field name="arch" type="xml">
+        <form>
+          <button name="custom_button_method" string="Custom Button Click Me!" type="object" />
+          <group>
+            <field name="name" required="1"/>
+            <field name="currency_id"/>
+            <!--domain="[('is_virtual_class', '=', True)]"
+            options="{'no_create:True','no_create_edit':True}"-->
+            <field name="school_id" string="School"/>
+
+            <field name="email_school" readonly="1"/>
+            <field name="hobby_list" widget="many2many_tags"/>
+            <field name="students_fees"/>
+            <field name="total_fees" widget="monetary"/>
+            <field name="active"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <record id="view_form_school_extend" model="ir.ui.view">
+      <field name="name" >view.form.school.extend</field>
+      <field name="model" >school.profile</field>
+      <field name="inherit_id" ref="school.school_form_view"/>
+      <field name="arch" type="xml">
+        <field name="school_description" position="after">
+          <field name="school_list" string="Students">
+            <tree >
+              <field name="name"/>
+            </tree>
+            <form>
+              <group>
+                <field name="name"/>
+              </group>
+            </form>
+          </field>
+        </field>
+      </field>
+    </record>
+
+
+
+    <record id="view_tree_student" model="ir.ui.view">
+      <field name="name">view.tree.student.profile</field>
+      <field name="model">student.profile</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="school_id"/>
+          <field name="is_virtual_school"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+    <!--Actions-->
+    <record id="action_view_student" model="ir.actions.act_window">
+      <field name="name">Students</field>
+      <field name="res_model">student.profile</field>
+    </record>
+
+    <record id="action_view_hobby" model="ir.actions.act_window">
+      <field name="name">Hobbies</field>
+      <field name="res_model">hobby.profile</field>
+    </record>
+
+
+
+    <!--Menus-->
+    <menuitem
+        id="menu_main_student"
+        name="Students List"
+        parent=""
+        action="student.action_view_student" />
+
+    <menuitem
+        id="menu_student"
+        name="Students"
+        parent="student.menu_main_student"
+        action="student.action_view_student"/>
+
+    <menuitem
+        id="menu_hobbies"
+        name="Hobbies"
+        parent="student.menu_main_student"
+        action="student.action_view_hobby"/>
+
+  </data>
+</odoo>

@@ -1,0 +1,32 @@
+COMMON ORM METHODS
+- create --> Create a new record
+- write --> Update record
+- copy --> Create a new record from existing record
+- unlink --> Delete record
+- default_get
+- name_create
+
+SEARCH / READ RELATED ORM METHODS
+- browse --> Return record set of givin ids
+- search --> Return record set based on filters
+- search_count --> Return number of records based on filters
+- name_search --> Return list of pairs based on filters
+- read --> Return list of dictionary based on given fields or all fields.
+- read_group --> Return list of dictionary based on given fields along with groupby fields
+
+FIELDS / VIEW RELATED ORM METHODS
+- fields_get --> It will return specific/all fields details
+- fields_get_view --> It will return specific view type in dictionary format
+
+OPERATION RELATED ORM METHOD
+- filtered --> Used to filter from recordset
+- mapped --> Used to apply function in recordset and return results based on operation
+- sorted --> Return recordset based on Ascending / Descending order
+
+RECORDSET RELATED ORM METHOD
+- exists --> Used to check recordset is exist or not.
+- ensure_one --> Used to verify recordset having single record
+- name_get --> Return record's textual value
+- get_metadata --> Return meta data about records
+
+
